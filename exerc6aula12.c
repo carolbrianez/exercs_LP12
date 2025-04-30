@@ -13,7 +13,10 @@ int main() {
     scanf("%s", nome);
     printf("Digite seu sobrenome: ");
     scanf("%s", sobrenome);
-    sprintf(completo, "%s %s", nome, sobrenome);
+
+    strcpy(completo, nome);
+    strcat(completo, " ");
+    strcat(completo, sobrenome);
 
     printf("Nome completo: %s\n", completo);
 
