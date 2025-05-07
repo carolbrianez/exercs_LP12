@@ -5,33 +5,26 @@
 
 int main() {
   char senha[50];
-  char senha_correta[] = "azimo";
   int tentativas = 3;
-  int i, senha_correta_tamanho = 0;
-  
-    while (senha_correta[senha_correta_tamanho] != '\0') {
-    senha_correta_tamanho++;
-  }
+  int i, igual;
 
   while (tentativas > 0) {
     printf("Digite a senha: ");
     scanf("%s", senha);
 
-    int senha_igual = 1;
-    i = 0;
-    while (senha[i] != '\0' || senha_correta[i] != '\0') {
-      if (senha[i] != senha_correta[i]) {
-        senha_igual = 0;
+    igual = 1;
+    for (i = 0; senha[i] != '\0' && "azimo"[i] != '\0'; i++) {
+      if (senha[i] != "azimo"[i]) {
+        igual = 0;
         break;
       }
-      i++;
-    }
-    
-    if (i != senha_correta_tamanho) {
-        senha_igual = 0;
     }
 
-    if (senha_igual) {
+    if (senha[i] != "azimo"[i]) {
+      igual = 0;
+    }
+
+    if (igual) {
       printf("Seja bem vindo!\n");
       return 0;
     } else {
